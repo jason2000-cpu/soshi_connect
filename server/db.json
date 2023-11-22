@@ -1,0 +1,62 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "username": "Bret",
+        "email": "bret@example.com",
+        "password": "92988-3874",
+        "posts": [1, 2],
+        "followers": [2],
+        "following": [2],
+        "isPremium": true
+      },
+      {
+        "id": 2,
+        "username": "Jackson",
+        "email": "user2@example.com",
+        "password": "password2",
+        "posts": [3],
+        "followers": [1],
+        "following": [1],
+        "isPremium": false
+      }
+    ],
+    "posts": [
+      {
+        "id": 1,
+        "userId": 1,
+        "content": "This is the first post by user1",
+        "likes": [2],
+        "comments": [1]
+      },
+      {
+        "id": 2,
+        "userId": 1,
+        "content": "Another post by user1",
+        "likes": [],
+        "comments": []
+      },
+      {
+        "id": 3,
+        "userId": 2,
+        "content": "User2's post",
+        "likes": [],
+        "comments": []
+      }
+    ],
+    "comments": [
+      {
+        "id": 1,
+        "userId": 2,
+        "postId": 1,
+        "content": "Nice post!"
+      }
+    ],
+    "likes": [
+      {
+        "userId": 2,
+        "postId": 1
+      }
+    ]
+  }
+  
