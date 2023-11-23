@@ -10,8 +10,14 @@ import { ImConnection } from "react-icons/im";
 import { CustomButton, Loading, TextInput } from "../components";
 import { BgImage } from "../assets";
 import useRequestRest from "../Hooks/useRequestRest";
+import { UserLogin } from "../redux/userSlice";
 
 const Register = () => {
+  const [errMsg, setErrMsg] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const dispatch = useDispatch();
+  const {registerUser, requestStatus} = useRequestRest();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -21,25 +27,17 @@ const Register = () => {
     mode: "onChange",
   });
   
-  const navigate = useNavigate();
-
-  const {registerUser, requestStatus} = useRequestRest();
-
   const onSubmit = async (userDet) => {
     const res = await registerUser(userDet);
     console.log("RESPONSE::::", res);
     if (res.status === "success"){
-      alert("Register Success")
       navigate('/home');
+      dispatch(UserLogin(res))
+      alert("Register Success")
     } else {
       alert(res.message);
     }
-
   };
-
-  const [errMsg, setErrMsg] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const dispatch = useDispatch();
 
   return (
     <div className='bg-bgColor w-full h-[100vh] flex items-center justify-center p-6'>

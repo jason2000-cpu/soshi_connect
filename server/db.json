@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "_id": "64df3c064180b81adfe41d4b",
+      "id": "64df3c064180b81adfe41d4b",
       "firstName": "Jackson",
       "lastName": "Mwangi",
       "email": "jasonmwangi2000@gmail.com",
@@ -24,7 +24,7 @@
       "password": "12345"
     },
     {
-      "_id": "64df3aec4180b81adfe41d32",
+      "id": "64df3aec4180b81adfe41d32",
       "firstName": "John",
       "lastName": "Bruce",
       "email": "john@gmail.com",

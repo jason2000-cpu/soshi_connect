@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { TbSocial } from "react-icons/tb";
 import { BsShare } from "react-icons/bs";
@@ -10,8 +10,12 @@ import { ImConnection } from "react-icons/im";
 import { CustomButton, Loading, TextInput } from "../components";
 import { BgImage } from "../assets";
 import useRequestRest from "../Hooks/useRequestRest";
+import { UserLogin } from "../redux/userSlice";
 
 const Login = () => {
+  const [errMsg, setErrMsg] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -28,6 +32,7 @@ const Login = () => {
      console.log(res);
      if (res.status === "success"){
       alert("Login Success");
+      dispatch(UserLogin(res.authUser))
       navigate('/home')
      } else {
       alert(res.message)
@@ -35,9 +40,6 @@ const Login = () => {
 
   };
 
-  const [errMsg, setErrMsg] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const dispatch = useDispatch();
   return (
     <div className='bg-bgColor w-full h-[100vh] flex items-center justify-center p-6'>
       <div className='w-full md:w-2/3 h-fit lg:h-full 2xl:h-5/6 py-8 lg:py-0 flex bg-primary rounded-xl overflow-hidden shadow-xl'>
