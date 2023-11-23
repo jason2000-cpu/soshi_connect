@@ -20,11 +20,11 @@ function App() {
     <div data-theme={theme} className='w-full min-h-[100vh]'>
       <Routes>
         <Route element={<Layout />}>
-          <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
           <Route path='/profile/:id?' element={<Profile />} />
         </Route>
 
-        <Route path='/register' element={<Register />} />
+        <Route path='/' element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/reset-password' element={<ResetPassword />} />
       </Routes>

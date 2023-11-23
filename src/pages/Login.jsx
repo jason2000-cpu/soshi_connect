@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { TbSocial } from "react-icons/tb";
@@ -9,6 +9,7 @@ import { AiOutlineInteraction } from "react-icons/ai";
 import { ImConnection } from "react-icons/im";
 import { CustomButton, Loading, TextInput } from "../components";
 import { BgImage } from "../assets";
+import useRequestRest from "../Hooks/useRequestRest";
 
 const Login = () => {
   const {
@@ -18,8 +19,21 @@ const Login = () => {
   } = useForm({
     mode: "onChange",
   });
+  const {loginUser, requestStatus, } = useRequestRest();
+  const navigate = useNavigate();
 
-  const onSubmit = async (data) => {};
+  const onSubmit = async (userDet) => {
+     const res =  loginUser(userDet);
+    //  console.log(loginUser(userDet));
+     console.log(res);
+     if (res.status === "success"){
+      alert("Login Success");
+      navigate('/home')
+     } else {
+      alert(res.message)
+     }
+
+  };
 
   const [errMsg, setErrMsg] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -106,7 +120,7 @@ const Login = () => {
           <p className='text-ascent-2 text-sm text-center'>
             Don't have an account?
             <Link
-              to='/register'
+              to='/'
               className='text-[#065ad8] font-semibold ml-2 cursor-pointer'
             >
               Create Account

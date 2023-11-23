@@ -1,62 +1,158 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "username": "Bret",
-        "email": "bret@example.com",
-        "password": "92988-3874",
-        "posts": [1, 2],
-        "followers": [2],
-        "following": [2],
-        "isPremium": true
-      },
-      {
-        "id": 2,
-        "username": "Jackson",
-        "email": "user2@example.com",
-        "password": "password2",
-        "posts": [3],
-        "followers": [1],
-        "following": [1],
-        "isPremium": false
-      }
-    ],
-    "posts": [
-      {
-        "id": 1,
-        "userId": 1,
-        "content": "This is the first post by user1",
-        "likes": [2],
-        "comments": [1]
-      },
-      {
-        "id": 2,
-        "userId": 1,
-        "content": "Another post by user1",
-        "likes": [],
-        "comments": []
-      },
-      {
-        "id": 3,
-        "userId": 2,
-        "content": "User2's post",
-        "likes": [],
-        "comments": []
-      }
-    ],
-    "comments": [
-      {
-        "id": 1,
-        "userId": 2,
-        "postId": 1,
-        "content": "Nice post!"
-      }
-    ],
-    "likes": [
-      {
-        "userId": 2,
-        "postId": 1
-      }
-    ]
-  }
-  
+  "users": [
+    {
+      "_id": "64df3c064180b81adfe41d4b",
+      "firstName": "Jackson",
+      "lastName": "Mwangi",
+      "email": "jasonmwangi2000@gmail.com",
+      "friends": [
+        "64df3aec4180b81adfe41d32",
+        "64df39704180b81adfe41d0b"
+      ],
+      "requests": [
+        "64df3aec4180b81adfe41d32"
+      ],
+      "suggests": [
+        "64df3aec4180b81adfe41d32"
+      ],
+      "views": 0,
+      "isPremium": true,
+      "createdAt": "2023-08-18T09:38:14.179Z",
+      "updatedAt": "2023-08-21T06:46:18.258Z",
+      "profileUrl": "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874454/samples/people/boy-snow-hoodie.jpg",
+      "token": "hZWFmZmU3NmMiLCJpYXQiOjE2OTIwMzY5",
+      "password": "12345"
+    },
+    {
+      "_id": "64df3aec4180b81adfe41d32",
+      "firstName": "John",
+      "lastName": "Bruce",
+      "email": "john@gmail.com",
+      "friends": [
+        "64df3c064180b81adfe41d4b",
+        "64df39704180b81adfe41d0b"
+      ],
+      "views": 0,
+      "isPremium": true,
+      "createdAt": "2023-08-18T09:33:32.519Z",
+      "updatedAt": "2023-08-18T09:49:19.475Z",
+      "__v": 2,
+      "profileUrl": "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874470/cld-sample.jpg"
+    },
+    {
+      "id": "9b609f23-8b5e-4803-92ed-91d9f22a0c83",
+      "firstName": "james",
+      "lastName": "Mwangi",
+      "email": "james@gmail.com",
+      "friends": [],
+      "requests": [],
+      "suggests": [],
+      "views": 0,
+      "isPremium": false,
+      "createdAt": "2023-11-23T12:25:07.434Z",
+      "updatedAt": null,
+      "profileUrl": null,
+      "password": "123456"
+    },
+    {
+      "id": "e9588814-b804-4ba6-88e5-f7dd410e5c9b",
+      "firstName": "Peter",
+      "lastName": "Kiarie",
+      "email": "peter@gmail.com",
+      "friends": [],
+      "requests": [],
+      "suggests": [],
+      "views": 0,
+      "isPremium": false,
+      "createdAt": "2023-11-23T12:28:14.295Z",
+      "updatedAt": null,
+      "profileUrl": null,
+      "password": "12345"
+    }
+  ],
+  "posts": [
+    {
+      "_id": "64e2fe620d7868ecff1a6a86",
+      "userId": "64df3c064180b81adfe41d4b",
+      "description": "Hello everyone, this is a new video. check it out. thank you",
+      "image": "https://res.cloudinary.com/djs3wu5bg/image/upload/v1692597858/SOCIALMEDIA/hdahstpztt1fvobc13st.png",
+      "likes": [
+        "64df3c064180b81adfe41d4b"
+      ],
+      "comments": [],
+      "createdAt": "2023-08-21T06:04:18.297Z",
+      "updatedAt": "2023-08-21T06:04:18.297Z",
+      "postViews": 0
+    },
+    {
+      "_id": "64df3ef86c2bd953c7b43193",
+      "userId": "64df3c064180b81adfe41d4b",
+      "description": "Hello everyone, this is a new video. check it out. thank you",
+      "image": "https://res.cloudinary.com/djs3wu5bg/image/upload/v1692597858/SOCIALMEDIA/hdahstpztt1fvobc13st.png",
+      "likes": [
+        "64df3c064180b81adfe41d4b"
+      ],
+      "comments": [],
+      "createdAt": "2023-08-21T06:04:18.297Z",
+      "updatedAt": "2023-08-21T06:04:18.297Z",
+      "postViews": 0
+    },
+    {
+      "_id": "64df3aec4180b81adke41d33",
+      "userId": "64df3c064180b81adfe41d4b",
+      "description": "Hello everyone, this is a new video. check it out. thank you",
+      "image": "https://res.cloudinary.com/djs3wu5bg/image/upload/v1692597858/SOCIALMEDIA/hdahstpztt1fvobc13st.png",
+      "likes": [
+        "64df3c064180b81adfe41d4b"
+      ],
+      "comments": [],
+      "createdAt": "2023-08-21T06:04:18.297Z",
+      "updatedAt": "2023-08-21T06:04:18.297Z",
+      "postViews": 0
+    }
+  ],
+  "postComments": [
+    {
+      "_id": "64df43e04a4c0d47b536a02a",
+      "userId": "64df3c064180b81adfe41d4b",
+      "postId": "64df3ef86c2bd953c7b43193",
+      "comment": "hahahah",
+      "from": "Jackson Mwangi",
+      "likes": [
+        "64df39704180b81adfe41d0b"
+      ],
+      "replies": [],
+      "createdAt": "2023-08-18T10:11:44.091Z",
+      "updatedAt": "2023-08-21T03:37:03.927Z",
+      "__v": 0
+    },
+    {
+      "_id": "64df43e04a4c0d47b536a02b",
+      "userId": "64df3aec4180b81adfe41d32",
+      "postId": "64df3ef86c2bd953c7b43193",
+      "comment": "hahahah",
+      "from": "Jackson Mwangi",
+      "likes": [
+        "64df39704180b81adfe41d0b"
+      ],
+      "replies": [],
+      "createdAt": "2023-08-18T10:11:44.091Z",
+      "updatedAt": "2023-08-21T03:37:03.927Z",
+      "__v": 0
+    },
+    {
+      "_id": "64df43e04a4c0d47b536a02c",
+      "userId": "64df3c064180b81adfe41d4b",
+      "postId": "64df3ef86c2bd953c7b43193",
+      "comment": "hahahah",
+      "from": "Jackson Mwangi",
+      "likes": [
+        "64df39704180b81adfe41d0b"
+      ],
+      "replies": [],
+      "createdAt": "2023-08-18T10:11:44.091Z",
+      "updatedAt": "2023-08-21T03:37:03.927Z",
+      "__v": 0
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { TbSocial } from "react-icons/tb";
@@ -9,6 +9,7 @@ import { AiOutlineInteraction } from "react-icons/ai";
 import { ImConnection } from "react-icons/im";
 import { CustomButton, Loading, TextInput } from "../components";
 import { BgImage } from "../assets";
+import useRequestRest from "../Hooks/useRequestRest";
 
 const Register = () => {
   const {
@@ -19,8 +20,22 @@ const Register = () => {
   } = useForm({
     mode: "onChange",
   });
+  
+  const navigate = useNavigate();
 
-  const onSubmit = async (data) => {};
+  const {registerUser, requestStatus} = useRequestRest();
+
+  const onSubmit = async (userDet) => {
+    const res = await registerUser(userDet);
+    console.log("RESPONSE::::", res);
+    if (res.status === "success"){
+      alert("Register Success")
+      navigate('/home');
+    } else {
+      alert(res.message);
+    }
+
+  };
 
   const [errMsg, setErrMsg] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
