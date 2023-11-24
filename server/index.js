@@ -1,14 +1,18 @@
-/* eslint-disable no-unused-vars */
+const jsonServer = require('json-server')
+const cors = require('cors')
+const path = require('path')
 
-import express from "express"
-import cors from "cors"
+const server = jsonServer.create()
+const router = jsonServer.router(path.join(__dirname, 'db.json'))
+const middlewares = jsonServer.defaults()
 
+server.use(cors())
+server.use(jsonServer.bodyParser)
+server.use(middlewares)
+server.use(router)
 
+const PORT = 3001
 
-const app = express()
-
-app.use(cors())
-
-const PORT = process.env.PORT || 5000
-
-app.listen(PORT, () => console.log(`Server running on https://localhost:${PORT}`))
+server.listen(PORT, () => {
+  console.log(`JSON Server is running on http://localhost:${PORT}`)
+})
