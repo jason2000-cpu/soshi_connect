@@ -19,6 +19,9 @@ import { BsFiletypeGif, BsPersonFillAdd } from "react-icons/bs";
 import { BiImages, BiSolidVideo } from "react-icons/bi";
 import { useForm } from "react-hook-form";
 import usePostsRest from "../Hooks/usePostsRest";
+import { imageDb } from "../FirebaseStorage/config";
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
+import { v4 } from "uuid";
 
 const Home = () => {
   const { user, edit } = useSelector((state) => state.user);
@@ -28,6 +31,7 @@ const Home = () => {
   const [file, setFile] = useState(null);
   const [posting, setPosting] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [postUrl, setPostUrl] = useState("");
 
 const { posts,writePost } = usePostsRest();
   const {
@@ -36,18 +40,50 @@ const { posts,writePost } = usePostsRest();
     formState: { errors },
   } = useForm();
 
-  const handlePostSubmit = async (data, file) => {
+  const handleFileUPload = async (file) => {
     setPosting(true);
-    const res = await writePost(data, file);
-    console.log(res);
-    if (res.status === "success") {
-      setPosting(false);
-      alert("Post Created!");
-    } else {
-      setPosting(false);
-      alert("An Unknown Error Occured");
-    }
+    let response;
+    const  imageRef = ref(imageDb, `images/${v4()}`);
+    await uploadBytes(imageRef, file)
+      .then((resp)=>{
+        console.log(resp);
+        response =  resp;
+      })
+    return response;
+  }
+
+
+
+  const handlePostSubmit = async (data) => {
+    const resp = await handleFileUPload(file);
+    console.log(resp);
+      getDownloadURL(resp.ref).then(async (url)=>{
+        // console.log(url);
+        // setPostUrl(url);
+        // setPosting(false);
+        const postData = {image: url, ...data}
+        const res = await writePost(postData);
+        console.log(res);
+        if (res.status === "success") {
+          // setPosting(false);
+          alert("Post Created!");
+        } else {
+          alert("An Unknown Error Occured");
+        }
+    })
+      // const postData = {image: postUrl, ...data}
+      // const res = await writePost(postData);
+      // console.log(res);
+      // if (res.status === "success") {
+      //   // setPosting(false);
+      //   alert("Post Created!");
+      // } else {
+      //   alert("An Unknown Error Occured");
+      // }
+  
   };
+
+
 
   return (
     <>

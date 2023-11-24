@@ -165,7 +165,7 @@
     },
     {
       "id": "64df43714a4c0d47b5369fef",
-      "userId":"64df3c064180b81adfe41d4b",
+      "userId": "64df3c064180b81adfe41d4b",
       "description": "What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, ",
       "likes": [
         "64df39704180b81adfe41d0b"
@@ -247,6 +247,186 @@
       "updatedAt": null,
       "views": 0,
       "image": null
+    },
+    {
+      "id": "4ceb0578-4128-4ae7-9896-192c54040852",
+      "userId": {
+        "id": "497f1341-8b32-46cb-a335-470bdab3a365",
+        "firstName": "Alice",
+        "lastName": "Wahome"
+      },
+      "description": "What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2023-11-24T10:57:00.962Z",
+      "updatedAt": null,
+      "views": 0,
+      "image": null
+    },
+    {
+      "id": "44d90922-42ef-4654-8db6-ff9ffbf5d3bf",
+      "userId": {
+        "id": "497f1341-8b32-46cb-a335-470bdab3a365",
+        "firstName": "Alice",
+        "lastName": "Wahome"
+      },
+      "description": "What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2023-11-24T10:57:10.920Z",
+      "updatedAt": null,
+      "views": 0,
+      "image": null
+    },
+    {
+      "id": "f1c40404-e1d5-45fe-ba67-3da386c328d8",
+      "userId": {
+        "id": "497f1341-8b32-46cb-a335-470bdab3a365",
+        "firstName": "Alice",
+        "lastName": "Wahome"
+      },
+      "description": "Hello Friends today I want to upload an image to firebase. So the image to this post is uploaded on firebase. Pray for me that it works fine",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2023-11-24T11:41:03.955Z",
+      "updatedAt": null,
+      "views": 0,
+      "image": null
+    },
+    {
+      "id": "104cc0ff-a5c0-4731-8f3e-48694efa0876",
+      "userId": {
+        "id": "497f1341-8b32-46cb-a335-470bdab3a365",
+        "firstName": "Alice",
+        "lastName": "Wahome"
+      },
+      "description": "Hello Friends today I want to upload an image to firebase. So the image to this post is uploaded on firebase. Pray for me that it works fine. This is the third round trying it ",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2023-11-24T11:44:33.418Z",
+      "updatedAt": null,
+      "views": 0,
+      "image": null
+    },
+    {
+      "id": "09a64dbc-d2d2-4d79-b626-fd0e6419e290",
+      "userId": {
+        "id": "497f1341-8b32-46cb-a335-470bdab3a365",
+        "firstName": "Alice",
+        "lastName": "Wahome"
+      },
+      "description": "Hello Friends today I want to upload an image to firebase. So the image to this post is uploaded on firebase. Pray for me that it works fine. This is the now the fourth round trying it ",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2023-11-24T11:46:59.230Z",
+      "updatedAt": null,
+      "views": 0,
+      "image": null
+    },
+    {
+      "id": "c71925c8-2335-4020-bd2e-e4f89a24a828",
+      "userId": {
+        "id": "497f1341-8b32-46cb-a335-470bdab3a365",
+        "firstName": "Alice",
+        "lastName": "Wahome"
+      },
+      "description": "Hello Friends today I want to upload an image to firebase. So the image to this post is uploaded on firebase. Pray for me that it works fine. This is the now the fifth timeround trying it ",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2023-11-24T11:54:45.397Z",
+      "updatedAt": null,
+      "views": 0,
+      "image": null
+    },
+    {
+      "id": "7339d929-7473-4cc9-aaef-08cccc8853a5",
+      "userId": {
+        "id": "497f1341-8b32-46cb-a335-470bdab3a365",
+        "firstName": "Alice",
+        "lastName": "Wahome"
+      },
+      "description": "Hello world",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2023-11-24T11:56:32.631Z",
+      "updatedAt": null,
+      "views": 0,
+      "image": null
+    },
+    {
+      "id": "3ab1185d-6c0b-4e84-a2ec-4b654d57b9ee",
+      "userId": {
+        "id": "497f1341-8b32-46cb-a335-470bdab3a365",
+        "firstName": "Alice",
+        "lastName": "Wahome"
+      },
+      "description": "Today am just feeling dizzy. Any help to work on my self will be appreciated. This one posted with Image",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2023-11-24T11:57:40.082Z",
+      "updatedAt": null,
+      "views": 0,
+      "image": null
+    },
+    {
+      "id": "cbd1fd8a-7a4d-4b11-a4a0-366234b4b060",
+      "userId": {
+        "id": "497f1341-8b32-46cb-a335-470bdab3a365",
+        "firstName": "Alice",
+        "lastName": "Wahome"
+      },
+      "description": "Hello Mr Jackson . Can I Post you",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2023-11-24T12:23:40.251Z",
+      "updatedAt": null,
+      "views": 0,
+      "image": null
+    },
+    {
+      "id": "ee6a3a68-2bab-4ac8-ae9b-2fcb6a937400",
+      "userId": {
+        "id": "9b609f23-8b5e-4803-92ed-91d9f22a0c83",
+        "firstName": "james",
+        "lastName": "Mwangi"
+      },
+      "description": "Hello Friends today I want to upload an image to firebase. So the image to this post is uploaded on firebase. Pray for me that it works fine",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2023-11-24T12:46:19.147Z",
+      "updatedAt": null,
+      "views": 0,
+      "image": "https://firebasestorage.googleapis.com/v0/b/soshiconnectimages.appspot.com/o/images%2Fe7ae5056-16f2-47ad-a688-1fe93c71adce?alt=media&token=1beb971d-255f-41e9-878c-2bda3ef82dde"
+    },
+    {
+      "id": "2a1c6fab-ec14-4687-bacb-8834fa6cfa8b",
+      "userId": {
+        "id": "9b609f23-8b5e-4803-92ed-91d9f22a0c83",
+        "firstName": "james",
+        "lastName": "Mwangi"
+      },
+      "description": "What about I take someone on a coffee date. See you on the commets section. Posted with an image",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2023-11-24T12:58:26.261Z",
+      "updatedAt": null,
+      "views": 0,
+      "image": ""
+    },
+    {
+      "id": "138064ee-2425-4eb0-8147-f3169d20a157",
+      "userId": {
+        "id": "9b609f23-8b5e-4803-92ed-91d9f22a0c83",
+        "firstName": "james",
+        "lastName": "Mwangi"
+      },
+      "description": "I am almost feeling exhausted some one to slide in the DM and help",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2023-11-24T13:15:24.633Z",
+      "updatedAt": null,
+      "views": 0,
+      "image": "https://firebasestorage.googleapis.com/v0/b/soshiconnectimages.appspot.com/o/images%2Fa024ab93-7b77-4aa5-8d78-f93157f94972?alt=media&token=f86708e6-9a9e-4cf7-93cb-61ab768cecda"
     }
   ],
   "postComments": [

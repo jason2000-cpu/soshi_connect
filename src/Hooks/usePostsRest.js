@@ -5,6 +5,8 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 // import REQUEST_STATUS from "./useRequestRest";
+import { imageDb } from "../FirebaseStorage/config";
+import { getDownloadURL, listAll } from "firebase/storage";
 
 
 
@@ -30,9 +32,22 @@ const getTime = () => {
 function usePostRest(){
     const [posts, setPosts] = useState([]);
     const [requestStatus, setRequestStatus] = useState(REQUEST_STATUS.LOADING);
+    const [imgUrl, setImgUrl] = useState(null);
     const user = useSelector((state)=> state.user.user);
     
     const originalRecord = [...posts];
+
+
+    // useEffect(()=>{
+    //     async function getImgUrl(){
+    //         try {
+    //             const response = await listAll(imageDb, "images");
+    //             console.log(response);
+    //         } catch(err){
+    //             console.log(err)
+    //         }
+    //     }
+    // })
 
     useEffect(()=>{
        async function getPosts(){
@@ -51,7 +66,7 @@ function usePostRest(){
     }, [originalRecord.length]);
 
     function writePost(post){
-        console.log("USER FROM WRITEPOST FUNC:::::", user)
+        console.log("POST IMAGE FROM WRITE POST", post.image);
         const newPost = {
             id: generatePostID(),
             userId: {
@@ -67,15 +82,15 @@ function usePostRest(){
             createdAt: getTime(),
             updatedAt: null,
             views: 0,
-            image: null,
+            image: post.image
         };
         
         setPosts([newPost, ...posts]);
 
-        function postFunc(){
+       async function postFunc(){
            let  res = {};
             try{
-                const response = axios.post(`${baseUrl}/posts`, newPost);
+                const response = await  axios.post(`${baseUrl}/posts`, newPost);
                 setRequestStatus(REQUEST_STATUS.SUCCESS);
                 console.log(response, "Post Success")
                 res = {status: REQUEST_STATUS.SUCCESS, message: "Post Success"};
