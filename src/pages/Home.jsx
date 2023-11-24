@@ -18,6 +18,7 @@ import { NoProfile } from "../assets";
 import { BsFiletypeGif, BsPersonFillAdd } from "react-icons/bs";
 import { BiImages, BiSolidVideo } from "react-icons/bi";
 import { useForm } from "react-hook-form";
+import usePostsRest from "../Hooks/usePostsRest";
 
 const Home = () => {
   const { user, edit } = useSelector((state) => state.user);
@@ -28,13 +29,25 @@ const Home = () => {
   const [posting, setPosting] = useState(false);
   const [loading, setLoading] = useState(false);
 
+const { posts,writePost } = usePostsRest();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const handlePostSubmit = async (data) => {};
+  const handlePostSubmit = async (data, file) => {
+    setPosting(true);
+    const res = await writePost(data, file);
+    console.log(res);
+    if (res.status === "success") {
+      setPosting(false);
+      alert("Post Created!");
+    } else {
+      setPosting(false);
+      alert("An Unknown Error Occured");
+    }
+  };
 
   return (
     <>
@@ -151,7 +164,7 @@ const Home = () => {
             ) : posts?.length > 0 ? (
               posts?.map((post) => (
                 <PostCard
-                  key={post?._id}
+                  key={post?.id}
                   post={post}
                   user={user}
                   deletePost={() => {}}
@@ -165,7 +178,7 @@ const Home = () => {
             )}
           </div>
 
-          {/* RIGJT */}
+          {/* RIGHT */}
           <div className='hidden w-1/4 h-full lg:flex flex-col gap-8 overflow-y-auto'>
             {/* FRIEND REQUEST */}
             <div className='w-full bg-primary shadow-sm rounded-lg px-6 py-5'>

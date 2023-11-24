@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { MdClose } from "react-icons/md";
@@ -6,6 +8,7 @@ import TextInput from "./TextInput";
 import Loading from "./Loading";
 import CustomButton from "./CustomButton";
 import { UpdateProfile } from "../redux/userSlice";
+import useRequestRest from "../Hooks/useRequestRest";
 
 const EditProfile = () => {
   const { user } = useSelector((state) => state.user);
@@ -13,6 +16,7 @@ const EditProfile = () => {
   const [errMsg, setErrMsg] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [picture, setPicture] = useState(null);
+  const { updateUser } = useRequestRest();
 
   const {
     register,
@@ -23,7 +27,16 @@ const EditProfile = () => {
     defaultValues: { ...user },
   });
 
-  const onSubmit = async (data) => {};
+  const onSubmit = async (data) => {
+    const res = await updateUser(data);
+    console.log(res);
+    if (res.status === "success"){
+      dispatch(UpdateProfile(res.data))
+      alert("Profile Saved!")
+    } else {
+      alert("An Unknown Error Occured");
+    }
+  };
 
   const handleClose = () => {
     dispatch(UpdateProfile(false));

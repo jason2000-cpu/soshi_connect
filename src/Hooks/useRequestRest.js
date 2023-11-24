@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import {v4 as uuidv4} from 'uuid';
 
-const baseUrl = "http://localhost:3000";
+const baseUrl = "http://localhost:3001";
 
 export const REQUEST_STATUS = {
     LOADING: "loading",
@@ -26,7 +26,6 @@ const getTime = () => {
 
 function useRequestRest(){
     const [requestStatus, setRequestStatus] = useState(REQUEST_STATUS.LOADING);
-    const [users , setUsers] = useState("");
     const [error, setError] = useState("");
     const [data, setData] = useState([]);
     const originalRecord = [...data];
@@ -108,30 +107,26 @@ function useRequestRest(){
         return res;
     }
 
-    function updateUser(userDet, doneCallback) {
+    function updateUser(userDet) {
         const newUsers = data.map( function(rec){
             return rec.id === userDet.id ? userDet : rec
         })
-
+        console.log("USER INFOR TO EDIT:::::", userDet);
         async function updateFunc(){
             try {
                 setData(newUsers);
-                await axios.put(`${baseUrl}/users`, userDet);
+                const response = await axios.put(`${baseUrl}/users/${userDet.id}`, userDet);
                 console.log("The Users::", data);
-
-                if (doneCallback) {
-                    doneCallback();
-                }
+                return {status: REQUEST_STATUS.SUCCESS, data: response.data}
+                
             } catch(err) {
                 console.log(err, "Error while updating User Profile");
-                if (doneCallback) {
-                    doneCallback();
-                }
                 setData(originalRecord);
+                return {status: REQUEST_STATUS.FAILURE, message:"Error while updating User Profile"};
             }
         }
 
-        updateFunc();
+        return updateFunc();
     }
 
 

@@ -11,12 +11,16 @@ import TextInput from "./TextInput";
 import Loading from "./Loading";
 import CustomButton from "./CustomButton";
 import { postComments } from "../assets/data";
+import useRequestRest from "../Hooks/useRequestRest";
+
+
+
 
 const ReplyCard = ({ reply, user, handleLike }) => {
   return (
     <div className='w-full py-3'>
       <div className='flex gap-3 items-center mb-1'>
-        <Link to={"/profile/" + reply?.userId?._id}>
+        <Link to={"/profile/" + reply?.userId?.id}>
           <img
             src={reply?.userId?.profileUrl ?? NoProfile}
             alt={reply?.userId?.firstName}
@@ -25,7 +29,7 @@ const ReplyCard = ({ reply, user, handleLike }) => {
         </Link>
 
         <div>
-          <Link to={"/profile/" + reply?.userId?._id}>
+          <Link to={"/profile/" + reply?.userId?.id}>
             <p className='font-medium text-base text-ascent-1'>
               {reply?.userId?.firstName} {reply?.userId?.lastName}
             </p>
@@ -43,7 +47,7 @@ const ReplyCard = ({ reply, user, handleLike }) => {
             className='flex gap-2 items-center text-base text-ascent-2 cursor-pointer'
             onClick={handleLike}
           >
-            {reply?.likes?.includes(user?._id) ? (
+            {reply?.likes?.includes(user?.id) ? (
               <BiSolidLike size={20} color='blue' />
             ) : (
               <BiLike size={20} />
@@ -127,6 +131,17 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
   const [loading, setLoading] = useState(false);
   const [replyComments, setReplyComments] = useState(0);
   const [showComments, setShowComments] = useState(0);
+  const { data } = useRequestRest();
+
+
+  const getUser = (post) => {
+    const id = post?.userId?.id;
+    const postUser = data.find(user=> user.id === id);
+    return postUser;
+  };
+  
+  const postUser = getUser(post);
+
 
   const getComments = async () => {
     setReplyComments(0);
@@ -139,22 +154,22 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
   return (
     <div className='mb-2 bg-primary p-4 rounded-xl'>
       <div className='flex gap-3 items-center mb-2'>
-        <Link to={"/profile/" + post?.userId?._id}>
+        <Link to={"/profile/" + post?.userId?.id}>
           <img
-            src={post?.userId?.profileUrl ?? NoProfile}
-            alt={post?.userId?.firstName}
+            src={postUser?.profileUrl ?? NoProfile}
+            alt={postUser?.firstName}
             className='w-14 h-14 object-cover rounded-full'
           />
         </Link>
 
         <div className='w-full flex justify-between'>
           <div className=''>
-            <Link to={"/profile/" + post?.userId?._id}>
+            <Link to={"/profile/" + postUser?.id}>
               <p className='font-medium text-lg text-ascent-1'>
-                {post?.userId?.firstName} {post?.userId?.lastName}
+                {postUser?.firstName} {postUser?.lastName}
               </p>
             </Link>
-            <span className='text-ascent-2'>{post?.userId?.location}</span>
+            <span className='text-ascent-2'>{postUser?.location}</span>
           </div>
 
           <span className='text-ascent-2'>
@@ -165,12 +180,12 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
 
       <div>
         <p className='text-ascent-2'>
-          {showAll === post?._id
+          {showAll === post?.id
             ? post?.description
             : post?.description.slice(0, 300)}
 
           {post?.description?.length > 301 &&
-            (showAll === post?._id ? (
+            (showAll === post?.id ? (
               <span
                 className='text-blue ml-2 font-mediu cursor-pointer'
                 onClick={() => setShowAll(0)}
@@ -180,7 +195,7 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
             ) : (
               <span
                 className='text-blue ml-2 font-medium cursor-pointer'
-                onClick={() => setShowAll(post?._id)}
+                onClick={() => setShowAll(post?.id)}
               >
                 Show More
               </span>
@@ -201,7 +216,7 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
       text-base border-t border-[#66666645]'
       >
         <p className='flex gap-2 items-center text-base cursor-pointer'>
-          {post?.likes?.includes(user?._id) ? (
+          {post?.likes?.includes(user?.id) ? (
             <BiSolidLike size={20} color='blue' />
           ) : (
             <BiLike size={20} />
@@ -212,18 +227,18 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
         <p
           className='flex gap-2 items-center text-base cursor-pointer'
           onClick={() => {
-            setShowComments(showComments === post._id ? null : post._id);
-            getComments(post?._id);
+            setShowComments(showComments === post.id ? null : post.id);
+            getComments(post?.id);
           }}
         >
           <BiComment size={20} />
           {post?.comments?.length} Comments
         </p>
 
-        {user?._id === post?.userId?._id && (
+        {user?.id === post?.userId?.id && (
           <div
             className='flex gap-1 items-center text-base text-ascent-1 cursor-pointer'
-            onClick={() => deletePost(post?._id)}
+            onClick={() => deletePost(post?.id)}
           >
             <MdOutlineDeleteOutline size={20} />
             <span>Delete</span>
@@ -232,21 +247,21 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
       </div>
 
       {/* COMMENTS */}
-      {showComments === post?._id && (
+      {showComments === post?.id && (
         <div className='w-full mt-4 border-t border-[#66666645] pt-4 '>
           <CommentForm
             user={user}
-            id={post?._id}
-            getComments={() => getComments(post?._id)}
+            id={post?.id}
+            getComments={() => getComments(post?.id)}
           />
 
           {loading ? (
             <Loading />
           ) : comments?.length > 0 ? (
             comments?.map((comment) => (
-              <div className='w-full py-2' key={comment?._id}>
+              <div className='w-full py-2' key={comment?.id}>
                 <div className='flex gap-3 items-center mb-1'>
-                  <Link to={"/profile/" + comment?.userId?._id}>
+                  <Link to={"/profile/" + comment?.userId?.id}>
                     <img
                       src={comment?.userId?.profileUrl ?? NoProfile}
                       alt={comment?.userId?.firstName}
@@ -254,7 +269,7 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
                     />
                   </Link>
                   <div>
-                    <Link to={"/profile/" + comment?.userId?._id}>
+                    <Link to={"/profile/" + comment?.userId?.id}>
                       <p className='font-medium text-base text-ascent-1'>
                         {comment?.userId?.firstName} {comment?.userId?.lastName}
                       </p>
@@ -270,7 +285,7 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
 
                   <div className='mt-2 flex gap-6'>
                     <p className='flex gap-2 items-center text-base text-ascent-2 cursor-pointer'>
-                      {comment?.likes?.includes(user?._id) ? (
+                      {comment?.likes?.includes(user?.id) ? (
                         <BiSolidLike size={20} color='blue' />
                       ) : (
                         <BiLike size={20} />
@@ -279,18 +294,18 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
                     </p>
                     <span
                       className='text-blue cursor-pointer'
-                      onClick={() => setReplyComments(comment?._id)}
+                      onClick={() => setReplyComments(comment?.id)}
                     >
                       Reply
                     </span>
                   </div>
 
-                  {replyComments === comment?._id && (
+                  {replyComments === comment?.id && (
                     <CommentForm
                       user={user}
-                      id={comment?._id}
+                      id={comment?.id}
                       replyAt={comment?.from}
-                      getComments={() => getComments(post?._id)}
+                      getComments={() => getComments(post?.id)}
                     />
                   )}
                 </div>
@@ -303,9 +318,9 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
                       className='text-base text-ascent-1 cursor-pointer'
                       onClick={() =>
                         setShowReply(
-                          showReply === comment?.replies?._id
+                          showReply === comment?.replies?.id
                             ? 0
-                            : comment?.replies?._id
+                            : comment?.replies?.id
                         )
                       }
                     >
@@ -313,18 +328,18 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
                     </p>
                   )}
 
-                  {showReply === comment?.replies?._id &&
+                  {showReply === comment?.replies?.id &&
                     comment?.replies?.map((reply) => (
                       <ReplyCard
                         reply={reply}
                         user={user}
-                        key={reply?._id}
+                        key={reply?.id}
                         handleLike={() =>
                           handleLike(
                             "/posts/like-comment/" +
-                              comment?._id +
+                              comment?.id +
                               "/" +
-                              reply?._id
+                              reply?.id
                           )
                         }
                       />

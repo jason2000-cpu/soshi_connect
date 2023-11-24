@@ -32,7 +32,7 @@ const Register = () => {
     console.log("RESPONSE::::", res);
     if (res.status === "success"){
       navigate('/home');
-      dispatch(UserLogin(res))
+      dispatch(UserLogin(res.data))
       alert("Register Success")
     } else {
       alert(res.message);
@@ -120,7 +120,7 @@ const Register = () => {
                   validate: (value) => {
                     const { password } = getValues();
 
-                    if (password != value) {
+                    if (password !== value) {
                       return "Passwords do no match";
                     }
                   },
@@ -136,7 +136,7 @@ const Register = () => {
             {errMsg?.message && (
               <span
                 className={`text-sm ${
-                  errMsg?.status == "failed"
+                  errMsg?.status === "failed"
                     ? "text-[#f64949fe]"
                     : "text-[#2ba150fe]"
                 } mt-0.5`}
