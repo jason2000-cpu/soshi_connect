@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import {v4 as uuidv4} from 'uuid';
 
-const baseUrl = "http://localhost:3001";
+const baseUrl = "https://outstanding-outfit-hen.cyclic.app/";
 
 export const REQUEST_STATUS = {
     LOADING: "loading",

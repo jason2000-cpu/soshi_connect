@@ -4,13 +4,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
-// import REQUEST_STATUS from "./useRequestRest";
-import { imageDb } from "../FirebaseStorage/config";
-import { getDownloadURL, listAll } from "firebase/storage";
 
 
 
-const baseUrl = "http://localhost:3001";
+const baseUrl = "https://outstanding-outfit-hen.cyclic.app/";
 
 export const REQUEST_STATUS = {
     LOADING: "loading",
@@ -36,18 +33,6 @@ function usePostRest(){
     const user = useSelector((state)=> state.user.user);
     
     const originalRecord = [...posts];
-
-
-    // useEffect(()=>{
-    //     async function getImgUrl(){
-    //         try {
-    //             const response = await listAll(imageDb, "images");
-    //             console.log(response);
-    //         } catch(err){
-    //             console.log(err)
-    //         }
-    //     }
-    // })
 
     useEffect(()=>{
        async function getPosts(){
