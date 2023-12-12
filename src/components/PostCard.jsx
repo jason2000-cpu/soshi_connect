@@ -12,6 +12,7 @@ import Loading from "./Loading";
 import CustomButton from "./CustomButton";
 import { postComments } from "../assets/data";
 import useRequestRest from "../Hooks/useRequestRest";
+import usePostsRest from "../Hooks/usePostsRest";
 
 
 
@@ -124,14 +125,17 @@ const CommentForm = ({ user, id, replyAt, getComments }) => {
   );
 };
 
-const PostCard = ({ post, user, deletePost, likePost }) => {
+const PostCard = ({ post, user, }) => {
   const [showAll, setShowAll] = useState(0);
   const [showReply, setShowReply] = useState(0);
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(false);
   const [replyComments, setReplyComments] = useState(0);
   const [showComments, setShowComments] = useState(0);
+  const [like, setLike] = useState(false);
   const { data } = useRequestRest();
+  const { deletePost, likePost } = usePostsRest();
+
 
 
   const getUser = (post) => {
@@ -142,6 +146,10 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
   
   const postUser = getUser(post);
 
+  if (post?.likes?.includes(user?.id)) {
+    setLike(true);
+  }
+
 
   const getComments = async () => {
     setReplyComments(0);
@@ -149,7 +157,12 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
     setComments(postComments);
     setLoading(false);
   };
-  const handleLike = async () => {};
+
+  const handleLike = async (postId) => {
+    console.log("From handleLike", post.likes);
+    console.log(like);
+    await likePost(postId);
+  };
 
   return (
     <div className='mb-2 bg-primary p-4 rounded-xl'>
@@ -202,12 +215,12 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
             ))}
         </p>
 
-        {post?.image && (
-          <img
-            src={post?.image}
-            alt='post'
-            className='w-full mt-2 rounded-lg'
-          />
+        {post?.image && ( 
+            <img
+              src={post?.image}
+              alt='post'
+              className='w-full mt-2 rounded-lg'
+            />
         )}
       </div>
 
@@ -215,12 +228,15 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
         className='mt-4 flex justify-between items-center px-3 py-2 text-ascent-2
       text-base border-t border-[#66666645]'
       >
-        <p className='flex gap-2 items-center text-base cursor-pointer'>
-          {post?.likes?.includes(user?.id) ? (
-            <BiSolidLike size={20} color='blue' />
+        <p className='flex gap-2 items-center text-base cursor-pointer' onClick={()=> handleLike(post.id)}>
+          {/* {post?.likes?.includes(user?.id) ? (
+            <BiSolidLike size={20} color='green'/>
           ) : (
-            <BiLike size={20} />
+            <BiLike size={20}  />
           )}
+          {post?.likes?.length} Likes */}
+
+          {like ? (<BiSolidLike size={20} color='green'/>) : (<BiLike size={20}  />)}
           {post?.likes?.length} Likes
         </p>
 

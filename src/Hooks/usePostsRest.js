@@ -7,8 +7,8 @@ import { v4 as uuidv4 } from "uuid";
 
 
 
-const baseUrl = "https://outstanding-outfit-hen.cyclic.app/";
-
+// const baseUrl = "https://outstanding-outfit-hen.cyclic.app/";
+const baseUrl = "http://localhost:3001"
 export const REQUEST_STATUS = {
     LOADING: "loading",
     SUCCESS: "success",
@@ -94,11 +94,53 @@ function usePostRest(){
     }
 
 
+   async function deletePost(postId){
+        let res = {};
+
+        try{
+            const response = await axios.delete(`${baseUrl}/posts/${postId}`);
+            setRequestStatus(REQUEST_STATUS.SUCCESS);
+            res = {status: REQUEST_STATUS.SUCCESS, message: "Post Deleted"};
+        } catch (err) {
+            console.log(err, "Error while deleting post")
+            setRequestStatus(REQUEST_STATUS.FAILURE);
+            res = {status: REQUEST_STATUS.FAILURE, message: err};
+        }
+    }
+
+
+    async function likePost(postId){
+       let post =  originalRecord.find(post => post.id === postId);
+
+       if (post.likes.includes(user.id)){
+           post.likes = post.likes.filter(like => like !== user.id);
+       } else {
+              post.likes.push(user.id);
+       }
+
+        console.log(post, "Liked Post")
+        try {
+            const response = await axios.patch(`${baseUrl}/posts/${postId}`, post);
+            setRequestStatus(REQUEST_STATUS.SUCCESS);
+            console.log(response.data, "Like Success")
+        
+        } catch(err) {
+            console.log(err, "Error while liking post")
+            setRequestStatus(REQUEST_STATUS.FAILURE);
+            setPosts(originalRecord);
+        
+        }
+
+    }
+
+
 
     return {
         posts,
         requestStatus,
-        writePost
+        writePost,
+        deletePost,
+        likePost
     }
 
 }

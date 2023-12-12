@@ -89,6 +89,21 @@
       "password": "12345",
       "profession": "Dean School of Informatics",
       "location": "Migori, Kenya"
+    },
+    {
+      "id": "a6969433-829f-4d12-a2f6-53c9bc8c30b3",
+      "firstName": "elewake",
+      "lastName": "connect",
+      "email": "elewake@gmail.com",
+      "friends": [],
+      "requests": [],
+      "suggests": [],
+      "views": 0,
+      "isPremium": false,
+      "createdAt": "2023-11-29T18:40:19.123Z",
+      "updatedAt": null,
+      "profileUrl": null,
+      "password": "12345"
     }
   ],
   "posts": [
@@ -103,7 +118,9 @@
       },
       "description": " What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
       "likes": [
-        "64df39704180b81adfe41d0b"
+        "64df39704180b81adfe41d0b",
+        "6df39704180b81adfe41d0b",
+        "497f1341-8b32-46cb-a335-470bdab3a365"
       ],
       "comments": [
         "64e2dc8577e497bd3a0bf843"
@@ -125,7 +142,8 @@
       "description": "Hello everyone, this is a new video. check it out. thank you",
       "image": "https://res.cloudinary.com/djs3wu5bg/image/upload/v1692597858/SOCIALMEDIA/hdahstpztt1fvobc13st.png",
       "likes": [
-        "64df3c064180b81adfe41d4b"
+        "64df3c064180b81adfe41d4b",
+        "64df39704180b81adfe41d0b"
       ],
       "comments": [],
       "createdAt": "2023-08-21T06:04:18.297Z",
@@ -421,12 +439,79 @@
         "lastName": "Mwangi"
       },
       "description": "I am almost feeling exhausted some one to slide in the DM and help",
-      "likes": [],
+      "likes": [
+        "9b609f23-8b5e-4803-92ed-91d9f22a0c83",
+        "497f1341-8b32-46cb-a335-470bdab3a365"
+      ],
       "comments": [],
       "createdAt": "2023-11-24T13:15:24.633Z",
       "updatedAt": null,
       "views": 0,
       "image": "https://firebasestorage.googleapis.com/v0/b/soshiconnectimages.appspot.com/o/images%2Fa024ab93-7b77-4aa5-8d78-f93157f94972?alt=media&token=f86708e6-9a9e-4cf7-93cb-61ab768cecda"
+    },
+    {
+      "id": "370d8c4e-8ef1-4153-aa44-8caac3cac5ee",
+      "userId": {
+        "id": "64df3c064180b81adfe41d4b",
+        "firstName": "Jackson",
+        "lastName": "Mwangi"
+      },
+      "description": "At Nairobi Innovation Week. It was such a pleasure to present a group project to a pannel of fellow software engineers",
+      "likes": [
+        "497f1341-8b32-46cb-a335-470bdab3a365"
+      ],
+      "comments": [],
+      "createdAt": "2023-12-12T09:53:25.659Z",
+      "updatedAt": null,
+      "views": 0,
+      "image": "https://firebasestorage.googleapis.com/v0/b/soshiconnectimages.appspot.com/o/images%2Fb0dacc49-c343-43b5-b918-0cd39083ca3d?alt=media&token=849cc75b-5d6a-41a8-b571-0b622d5a5b9c"
+    },
+    {
+      "id": "e724fcbb-7655-4873-b978-82258b78324f",
+      "userId": {
+        "id": "64df3c064180b81adfe41d4b",
+        "firstName": "Jackson",
+        "lastName": "Mwangi"
+      },
+      "description": "Watch the below video. Its just facinating.",
+      "likes": [
+        "497f1341-8b32-46cb-a335-470bdab3a365"
+      ],
+      "comments": [],
+      "createdAt": "2023-12-12T10:02:31.656Z",
+      "updatedAt": null,
+      "views": 0,
+      "image": "https://firebasestorage.googleapis.com/v0/b/soshiconnectimages.appspot.com/o/images%2F96b58b27-d19b-46a9-ba03-f1575e9ee9d2?alt=media&token=2551c319-123c-43fe-b20a-427543a3867f"
+    },
+    {
+      "id": "dac7733a-4748-4b77-ac06-80693604daa8",
+      "userId": {
+        "id": "64df3c064180b81adfe41d4b",
+        "firstName": "Jackson",
+        "lastName": "Mwangi"
+      },
+      "description": "Video of the week",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2023-12-12T10:13:42.253Z",
+      "updatedAt": null,
+      "views": 0,
+      "image": "https://firebasestorage.googleapis.com/v0/b/soshiconnectimages.appspot.com/o/images%2F438067bb-661a-49dc-b05c-0686dc181486?alt=media&token=4a163252-eccf-4137-b3fd-cd8176a89d20"
+    },
+    {
+      "id": "fd685141-7060-4e11-a673-72e6954113ca",
+      "userId": {
+        "id": "64df3c064180b81adfe41d4b",
+        "firstName": "Jackson",
+        "lastName": "Mwangi"
+      },
+      "description": "Kindly watch the below video and give it a like",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2023-12-12T10:16:01.043Z",
+      "updatedAt": null,
+      "views": 0,
+      "image": "https://firebasestorage.googleapis.com/v0/b/soshiconnectimages.appspot.com/o/images%2Fede678a2-ca7e-4715-96ee-0ba0fa4e4c2c?alt=media&token=9dbce092-9d32-4a55-9d35-708545e29155"
     }
   ],
   "postComments": [

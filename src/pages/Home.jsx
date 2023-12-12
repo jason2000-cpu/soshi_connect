@@ -28,7 +28,7 @@ const Home = () => {
   const [friendRequest, setFriendRequest] = useState(requests);
   const [suggestedFriends, setSuggestedFriends] = useState(suggest);
   const [errMsg, setErrMsg] = useState("");
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState({});
   const [posting, setPosting] = useState(false);
   const [loading, setLoading] = useState(false);
   const [postUrl, setPostUrl] = useState("");
@@ -55,6 +55,8 @@ const { posts,writePost } = usePostsRest();
 
 
   const handlePostSubmit = async (data) => {
+    console.log(data);
+    console.log(file.image)
     const resp = await handleFileUPload(file);
     console.log(resp);
       getDownloadURL(resp.ref).then(async (url)=>{
@@ -139,7 +141,7 @@ const { posts,writePost } = usePostsRest();
                 >
                   <input
                     type='file'
-                    onChange={(e) => setFile(e.target.files[0])}
+                    onChange={(e) => setFile({image: e.target.files[0]})}
                     className='hidden'
                     id='imgUpload'
                     data-max-size='5120'
@@ -156,7 +158,7 @@ const { posts,writePost } = usePostsRest();
                   <input
                     type='file'
                     data-max-size='5120'
-                    onChange={(e) => setFile(e.target.files[0])}
+                    onChange={(e) => setFile({video : e.target.files[0]})}
                     className='hidden'
                     id='videoUpload'
                     accept='.mp4, .wav'
@@ -172,7 +174,7 @@ const { posts,writePost } = usePostsRest();
                   <input
                     type='file'
                     data-max-size='5120'
-                    onChange={(e) => setFile(e.target.files[0])}
+                    onChange={(e) => setFile({gif: e.target.files[0]})}
                     className='hidden'
                     id='vgifUpload'
                     accept='.gif'
