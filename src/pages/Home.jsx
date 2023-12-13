@@ -32,6 +32,7 @@ const Home = () => {
   const [posting, setPosting] = useState(false);
   const [loading, setLoading] = useState(false);
   const [postUrl, setPostUrl] = useState("");
+  const [like, setLike] = useState(false);
 
 const { posts,writePost } = usePostsRest();
   const {

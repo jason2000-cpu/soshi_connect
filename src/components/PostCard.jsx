@@ -125,14 +125,16 @@ const CommentForm = ({ user, id, replyAt, getComments }) => {
   );
 };
 
-const PostCard = ({ post, user, }) => {
+const PostCard = ({ post, user }) => {
   const [showAll, setShowAll] = useState(0);
   const [showReply, setShowReply] = useState(0);
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(false);
   const [replyComments, setReplyComments] = useState(0);
   const [showComments, setShowComments] = useState(0);
-  const [like, setLike] = useState(false);
+  const [like, setLike] = useState(post?.likes?.includes(user?.id));
+
+
   const { data } = useRequestRest();
   const { deletePost, likePost } = usePostsRest();
 
@@ -146,10 +148,6 @@ const PostCard = ({ post, user, }) => {
   
   const postUser = getUser(post);
 
-  if (post?.likes?.includes(user?.id)) {
-    setLike(true);
-  }
-
 
   const getComments = async () => {
     setReplyComments(0);
@@ -159,9 +157,27 @@ const PostCard = ({ post, user, }) => {
   };
 
   const handleLike = async (postId) => {
+    const originalLikes = post.likes;
+
+    if (post.likes.includes(user.id)){
+      post.likes = post.likes.filter((id) => id !== user.id);
+      console.log(post.likes.length)
+      setLike(false);
+    } else {
+      post.likes.push(user.id);
+      setLike(true);
+    }
+
     console.log("From handleLike", post.likes);
     console.log(like);
-    await likePost(postId);
+    setLike(!like);
+    let response = await likePost(postId);
+
+    if (response.status === "failure"){
+      post.likes = originalLikes
+      alert(response.message);
+
+    }
   };
 
   return (

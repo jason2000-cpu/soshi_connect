@@ -110,6 +110,7 @@ function usePostRest(){
 
 
     async function likePost(postId){
+        let res = {};
        let post =  originalRecord.find(post => post.id === postId);
 
        if (post.likes.includes(user.id)){
@@ -123,13 +124,17 @@ function usePostRest(){
             const response = await axios.patch(`${baseUrl}/posts/${postId}`, post);
             setRequestStatus(REQUEST_STATUS.SUCCESS);
             console.log(response.data, "Like Success")
+            res = {status: REQUEST_STATUS.SUCCESS, message: "Like Success"}
         
         } catch(err) {
             console.log(err, "Error while liking post")
             setRequestStatus(REQUEST_STATUS.FAILURE);
             setPosts(originalRecord);
+            res = {status: REQUEST_STATUS.FAILURE, message:"Could Not Like Post"}
         
         }
+
+        return res;
 
     }
 
