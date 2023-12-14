@@ -39,7 +39,6 @@ function usePostRest(){
             try {
                 const response = await axios.get(`${baseUrl}/posts`);
                 setRequestStatus(REQUEST_STATUS.SUCCESS);
-                console.log("POSTS:::::", response.data)
                 setPosts(response.data);
 
             } catch(err) {
@@ -97,10 +96,18 @@ function usePostRest(){
    async function deletePost(postId){
         let res = {};
 
+        console.log(postId)
         try{
             const response = await axios.delete(`${baseUrl}/posts/${postId}`);
-            setRequestStatus(REQUEST_STATUS.SUCCESS);
-            res = {status: REQUEST_STATUS.SUCCESS, message: "Post Deleted"};
+            console.log(response);
+            if (response.status === 200){
+                setRequestStatus(REQUEST_STATUS.SUCCESS);
+                res = {status: REQUEST_STATUS.SUCCESS, message: "Post Deleted"};
+            } else {
+                setRequestStatus(REQUEST_STATUS.FAILURE);
+                res = {status: REQUEST_STATUS.SUCCESS, message: "Axios Error"};
+            }
+
         } catch (err) {
             console.log(err, "Error while deleting post")
             setRequestStatus(REQUEST_STATUS.FAILURE);

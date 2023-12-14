@@ -13,6 +13,7 @@ import CustomButton from "./CustomButton";
 import { postComments } from "../assets/data";
 import useRequestRest from "../Hooks/useRequestRest";
 import usePostsRest from "../Hooks/usePostsRest";
+import usePostCommentsRest from "../Hooks/usePostCommentsRest";
 
 
 
@@ -134,10 +135,9 @@ const PostCard = ({ post, user }) => {
   const [showComments, setShowComments] = useState(0);
   const [like, setLike] = useState(post?.likes?.includes(user?.id));
 
-
   const { data } = useRequestRest();
   const { deletePost, likePost } = usePostsRest();
-
+  const { getPostComments, likeComment, writeComment} = usePostCommentsRest();
 
 
   const getUser = (post) => {
@@ -149,10 +149,9 @@ const PostCard = ({ post, user }) => {
   const postUser = getUser(post);
 
 
-  const getComments = async () => {
+  const getComments = async (postId) => {
     setReplyComments(0);
-
-    setComments(postComments);
+    setComments(getPostComments(postId));
     setLoading(false);
   };
 
@@ -176,7 +175,6 @@ const PostCard = ({ post, user }) => {
     if (response.status === "failure"){
       post.likes = originalLikes
       alert(response.message);
-
     }
   };
 
