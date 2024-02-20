@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-import { useState, useEffect } from "react"; 
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
@@ -31,7 +31,7 @@ function usePostRest(){
     const [requestStatus, setRequestStatus] = useState(REQUEST_STATUS.LOADING);
     const [imgUrl, setImgUrl] = useState(null);
     const user = useSelector((state)=> state.user.user);
-    
+
     const originalRecord = [...posts];
 
     useEffect(()=>{
@@ -60,15 +60,14 @@ function usePostRest(){
                 profileUrl: user.image,
                 loaction:  user.loaction
             },
-            description: post.description,
             likes: [],
             comments: [],
             createdAt: getTime(),
             updatedAt: null,
             views: 0,
-            image: post.image
+            ...post
         };
-        
+
         setPosts([newPost, ...posts]);
 
        async function postFunc(){
@@ -78,7 +77,7 @@ function usePostRest(){
                 setRequestStatus(REQUEST_STATUS.SUCCESS);
                 console.log(response, "Post Success")
                 res = {status: REQUEST_STATUS.SUCCESS, message: "Post Success"};
-            
+
             } catch(err) {
                 console.log(err, "Error while posting")
                 setRequestStatus(REQUEST_STATUS.FAILURE);
@@ -132,13 +131,13 @@ function usePostRest(){
             setRequestStatus(REQUEST_STATUS.SUCCESS);
             console.log(response.data, "Like Success")
             res = {status: REQUEST_STATUS.SUCCESS, message: "Like Success"}
-        
+
         } catch(err) {
             console.log(err, "Error while liking post")
             setRequestStatus(REQUEST_STATUS.FAILURE);
             setPosts(originalRecord);
             res = {status: REQUEST_STATUS.FAILURE, message:"Could Not Like Post"}
-        
+
         }
 
         return res;

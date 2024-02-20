@@ -23,7 +23,7 @@
       "token": "hZWFmZmU3NmMiLCJpYXQiOjE2OTIwMzY5",
       "password": "12345",
       "profession": "Trader",
-      "location": " Kibra, Nairobi"
+      "location": " East leigh, Nairobi"
     },
     {
       "id": "64df3aec4180b81adfe41d32",
@@ -530,6 +530,38 @@
       "updatedAt": null,
       "views": 0,
       "image": "https://firebasestorage.googleapis.com/v0/b/soshiconnectimages.appspot.com/o/images%2F9089c643-c817-46b2-b010-cbdd63fb3f86?alt=media&token=bc047d3c-1275-4e47-af6b-c4fa63cc66b4"
+    },
+    {
+      "id": "df06e708-e726-4efb-9f85-439d5a4c8d33",
+      "userId": {
+        "id": "64df3c064180b81adfe41d4b",
+        "firstName": "Jackson",
+        "lastName": "Mwangi"
+      },
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-02-20T12:49:15.579Z",
+      "updatedAt": null,
+      "views": 0,
+      "image": "https://firebasestorage.googleapis.com/v0/b/soshiconnectimages.appspot.com/o/images%2Fd8f87c56-bff3-4f99-b8a8-12fca84cc61a?alt=media&token=6660200d-cdc9-4a2c-92f6-7223c07f5d75",
+      "description": "The OSI Networking Model"
+    },
+    {
+      "id": "8ef99928-e073-4324-b64e-e9be41264b57",
+      "userId": {
+        "id": "64df3c064180b81adfe41d4b",
+        "firstName": "Jackson",
+        "lastName": "Mwangi"
+      },
+      "likes": [
+        "64df3c064180b81adfe41d4b"
+      ],
+      "comments": [],
+      "createdAt": "2024-02-20T12:51:07.678Z",
+      "updatedAt": null,
+      "views": 0,
+      "video": "https://firebasestorage.googleapis.com/v0/b/soshiconnectimages.appspot.com/o/images%2F96b58b27-d19b-46a9-ba03-f1575e9ee9d2?alt=media&token=2551c319-123c-43fe-b20a-427543a3867f",
+      "description": "Video of the Week!"
     }
   ],
   "postComments": [

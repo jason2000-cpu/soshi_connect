@@ -145,7 +145,7 @@ const PostCard = ({ post, user }) => {
     const postUser = data.find(user=> user.id === id);
     return postUser;
   };
-  
+
   const postUser = getUser(post);
 
 
@@ -229,13 +229,21 @@ const PostCard = ({ post, user }) => {
             ))}
         </p>
 
-        {post?.image && ( 
-            <img
-              src={post?.image}
-              alt='post'
-              className='w-full mt-2 rounded-lg'
-            />
-        )}
+        {post.image ?
+
+        (
+        <img
+          src={post?.image}
+          alt="post"
+          className='w-full mt-2 rounded-lg'
+        />
+        ) :
+        (post.video?
+        <video width="640" height="360" controls>
+          <source  src= {post.video} type="video/mp4" />
+        </video> :
+        <gif></gif>)}
+
       </div>
 
       <div

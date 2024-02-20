@@ -61,14 +61,13 @@ const { posts,writePost } = usePostsRest();
     const resp = await handleFileUPload(file);
     console.log(resp);
       getDownloadURL(resp.ref).then(async (url)=>{
-        // console.log(url);
-        // setPostUrl(url);
-        // setPosting(false);
-        const postData = {image: url, ...data}
+        const fileObj = {};
+        fileObj[Object.keys(file)[0]] = url
+        const postData = {...fileObj, ...data}
+        console.log(postData);
         const res = await writePost(postData);
         console.log(res);
         if (res.status === "success") {
-          // setPosting(false);
           alert("Post Created!");
         } else {
           alert("An Unknown Error Occured");
@@ -83,7 +82,7 @@ const { posts,writePost } = usePostsRest();
       // } else {
       //   alert("An Unknown Error Occured");
       // }
-  
+
   };
 
 
