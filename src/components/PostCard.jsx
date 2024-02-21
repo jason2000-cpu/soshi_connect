@@ -141,7 +141,7 @@ const PostCard = ({ post, user }) => {
 
 
   const getUser = (post) => {
-    const id = post?.userId;
+    const id = post?.userId?.id;
     const postUser = data.find(user=> user.id === id);
     return postUser;
   };
@@ -273,7 +273,7 @@ const PostCard = ({ post, user }) => {
           {post?.comments?.length} Comments
         </p>
 
-        {user?.id === post?.userId && (
+        {user?.id === post?.userId?.id && (
           <div
             className='flex gap-1 items-center text-base text-ascent-1 cursor-pointer'
             onClick={() => deletePost(post?.id)}
