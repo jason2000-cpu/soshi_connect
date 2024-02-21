@@ -109,13 +109,7 @@
   "posts": [
     {
       "id": "64df3ed06c2bd953c7b43172",
-      "userId": {
-        "id": "64df39704180b81adfe41d0b",
-        "firstName": "John ",
-        "lastName": "Leisiba",
-        "profileUrl": "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874453/samples/bike.jpg",
-        "location": "Narok, Kenya"
-      },
+      "userId": "64df39704180b81adfe41d0b",
       "description": " What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
       "likes": [
         "64df39704180b81adfe41d0b",
@@ -134,13 +128,7 @@
     },
     {
       "id": "64e2fe620d7868ecff1a6a86",
-      "userId": {
-        "id": "64df39704180b81adfe41d0b",
-        "firstName": "Chris",
-        "lastName": "Omar",
-        "profileUrl": "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874454/samples/people/boy-snow-hoodie.jpg",
-        "location": "Nairobi Kenya"
-      },
+      "userId": "64df39704180b81adfe41d0b",
       "description": "Hello everyone, this is a new video. check it out. thank you",
       "image": "https://res.cloudinary.com/djs3wu5bg/image/upload/v1692597858/SOCIALMEDIA/hdahstpztt1fvobc13st.png",
       "likes": [
@@ -167,11 +155,7 @@
     },
     {
       "id": "64df437e4a4c0d47b536a002",
-      "userId": {
-        "id": "64df424b4a4c0d47b5369f65",
-        "firstName": "Peterson",
-        "lastName": "Kaloki"
-      },
+      "userId": "64df424b4a4c0d47b5369f65",
       "description": "What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, ",
       "likes": [
         "64df424b4a4c0d47b5369f65"
@@ -198,11 +182,7 @@
     },
     {
       "id": "64df42dc4a4c0d47b5369f8a",
-      "userId": {
-        "id": "64df424b4a4c0d47b5369f65",
-        "firstName": "Gloria",
-        "lastName": "Givondo"
-      },
+      "userId": "64df424b4a4c0d47b5369f65",
       "description": " What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,",
       "likes": [
         "64df424b4a4c0d47b5369f65"
@@ -215,11 +195,7 @@
     },
     {
       "id": "64df42b04a4c0d47b5369f77",
-      "userId": {
-        "id": "64df424b4a4c0d47b5369f65",
-        "firstName": "James",
-        "lastName": "Mwangi"
-      },
+      "userId": "64df424b4a4c0d47b5369f65",
       "description": "What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, ",
       "likes": [],
       "comments": [],
@@ -239,13 +215,7 @@
     },
     {
       "id": "e68208cd-4130-4c5a-a6e7-918fe436df30",
-      "userId": {
-        "id": "64df3c064180b81adfe41d4b",
-        "firstName": "Chris",
-        "lastName": "Omar",
-        "profileUrl": "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874454/samples/people/boy-snow-hoodie.jpg",
-        "location": "Nairobi Kenya"
-      },
+      "userId": "64df3c064180b81adfe41d4b",
       "description": "What about I take someone on a coffee date. See you on the commets section",
       "likes": [],
       "comments": [],
@@ -256,11 +226,7 @@
     },
     {
       "id": "a027c293-02fd-4976-a876-9eb086418ddf",
-      "userId": {
-        "id": "64df3c064180b81adfe41d4b",
-        "firstName": "Jackson",
-        "lastName": "Mwangi"
-      },
+      "userId": "64df3c064180b81adfe41d4b",
       "description": "Today am just feeling dizzy. Any help to work on my self will be appreciated",
       "likes": [],
       "comments": [],
@@ -271,11 +237,7 @@
     },
     {
       "id": "4ceb0578-4128-4ae7-9896-192c54040852",
-      "userId": {
-        "id": "497f1341-8b32-46cb-a335-470bdab3a365",
-        "firstName": "Alice",
-        "lastName": "Wahome"
-      },
+      "userId": "497f1341-8b32-46cb-a335-470bdab3a365",
       "description": "What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five",
       "likes": [],
       "comments": [],
@@ -286,11 +248,7 @@
     },
     {
       "id": "44d90922-42ef-4654-8db6-ff9ffbf5d3bf",
-      "userId": {
-        "id": "497f1341-8b32-46cb-a335-470bdab3a365",
-        "firstName": "Alice",
-        "lastName": "Wahome"
-      },
+      "userId": "497f1341-8b32-46cb-a335-470bdab3a365",
       "description": "What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five",
       "likes": [],
       "comments": [],
@@ -301,11 +259,7 @@
     },
     {
       "id": "f1c40404-e1d5-45fe-ba67-3da386c328d8",
-      "userId": {
-        "id": "497f1341-8b32-46cb-a335-470bdab3a365",
-        "firstName": "Alice",
-        "lastName": "Wahome"
-      },
+      "userId": "497f1341-8b32-46cb-a335-470bdab3a365",
       "description": "Hello Friends today I want to upload an image to firebase. So the image to this post is uploaded on firebase. Pray for me that it works fine",
       "likes": [],
       "comments": [],
@@ -316,11 +270,7 @@
     },
     {
       "id": "104cc0ff-a5c0-4731-8f3e-48694efa0876",
-      "userId": {
-        "id": "497f1341-8b32-46cb-a335-470bdab3a365",
-        "firstName": "Alice",
-        "lastName": "Wahome"
-      },
+      "userId": "497f1341-8b32-46cb-a335-470bdab3a365",
       "description": "Hello Friends today I want to upload an image to firebase. So the image to this post is uploaded on firebase. Pray for me that it works fine. This is the third round trying it ",
       "likes": [],
       "comments": [],
@@ -331,11 +281,7 @@
     },
     {
       "id": "09a64dbc-d2d2-4d79-b626-fd0e6419e290",
-      "userId": {
-        "id": "497f1341-8b32-46cb-a335-470bdab3a365",
-        "firstName": "Alice",
-        "lastName": "Wahome"
-      },
+      "userId": "497f1341-8b32-46cb-a335-470bdab3a365",
       "description": "Hello Friends today I want to upload an image to firebase. So the image to this post is uploaded on firebase. Pray for me that it works fine. This is the now the fourth round trying it ",
       "likes": [],
       "comments": [],
@@ -346,11 +292,7 @@
     },
     {
       "id": "c71925c8-2335-4020-bd2e-e4f89a24a828",
-      "userId": {
-        "id": "497f1341-8b32-46cb-a335-470bdab3a365",
-        "firstName": "Alice",
-        "lastName": "Wahome"
-      },
+      "userId": "497f1341-8b32-46cb-a335-470bdab3a365",
       "description": "Hello Friends today I want to upload an image to firebase. So the image to this post is uploaded on firebase. Pray for me that it works fine. This is the now the fifth timeround trying it ",
       "likes": [],
       "comments": [],
@@ -361,11 +303,7 @@
     },
     {
       "id": "7339d929-7473-4cc9-aaef-08cccc8853a5",
-      "userId": {
-        "id": "497f1341-8b32-46cb-a335-470bdab3a365",
-        "firstName": "Alice",
-        "lastName": "Wahome"
-      },
+      "userId": "497f1341-8b32-46cb-a335-470bdab3a365",
       "description": "Hello world",
       "likes": [],
       "comments": [],
@@ -376,11 +314,7 @@
     },
     {
       "id": "3ab1185d-6c0b-4e84-a2ec-4b654d57b9ee",
-      "userId": {
-        "id": "497f1341-8b32-46cb-a335-470bdab3a365",
-        "firstName": "Alice",
-        "lastName": "Wahome"
-      },
+      "userId":"497f1341-8b32-46cb-a335-470bdab3a365",
       "description": "Today am just feeling dizzy. Any help to work on my self will be appreciated. This one posted with Image",
       "likes": [],
       "comments": [],
@@ -391,11 +325,7 @@
     },
     {
       "id": "cbd1fd8a-7a4d-4b11-a4a0-366234b4b060",
-      "userId": {
-        "id": "497f1341-8b32-46cb-a335-470bdab3a365",
-        "firstName": "Alice",
-        "lastName": "Wahome"
-      },
+      "userId": "497f1341-8b32-46cb-a335-470bdab3a365",
       "description": "Hello Mr Jackson . Can I Post you",
       "likes": [],
       "comments": [],
@@ -406,11 +336,7 @@
     },
     {
       "id": "ee6a3a68-2bab-4ac8-ae9b-2fcb6a937400",
-      "userId": {
-        "id": "9b609f23-8b5e-4803-92ed-91d9f22a0c83",
-        "firstName": "james",
-        "lastName": "Mwangi"
-      },
+      "userId":"9b609f23-8b5e-4803-92ed-91d9f22a0c83",
       "description": "Hello Friends today I want to upload an image to firebase. So the image to this post is uploaded on firebase. Pray for me that it works fine",
       "likes": [],
       "comments": [],
@@ -421,11 +347,7 @@
     },
     {
       "id": "2a1c6fab-ec14-4687-bacb-8834fa6cfa8b",
-      "userId": {
-        "id": "9b609f23-8b5e-4803-92ed-91d9f22a0c83",
-        "firstName": "james",
-        "lastName": "Mwangi"
-      },
+      "userId": "9b609f23-8b5e-4803-92ed-91d9f22a0c83",
       "description": "What about I take someone on a coffee date. See you on the commets section. Posted with an image",
       "likes": [],
       "comments": [],
@@ -436,11 +358,7 @@
     },
     {
       "id": "138064ee-2425-4eb0-8147-f3169d20a157",
-      "userId": {
-        "id": "9b609f23-8b5e-4803-92ed-91d9f22a0c83",
-        "firstName": "james",
-        "lastName": "Mwangi"
-      },
+      "userId": "9b609f23-8b5e-4803-92ed-91d9f22a0c83",
       "description": "I am almost feeling exhausted some one to slide in the DM and help",
       "likes": [
         "9b609f23-8b5e-4803-92ed-91d9f22a0c83",
@@ -454,11 +372,7 @@
     },
     {
       "id": "370d8c4e-8ef1-4153-aa44-8caac3cac5ee",
-      "userId": {
-        "id": "64df3c064180b81adfe41d4b",
-        "firstName": "Jackson",
-        "lastName": "Mwangi"
-      },
+      "userId": "64df3c064180b81adfe41d4b",
       "description": "At Nairobi Innovation Week. It was such a pleasure to present a group project to a pannel of fellow software engineers",
       "likes": [
         "497f1341-8b32-46cb-a335-470bdab3a365"
@@ -471,11 +385,7 @@
     },
     {
       "id": "e724fcbb-7655-4873-b978-82258b78324f",
-      "userId": {
-        "id": "64df3c064180b81adfe41d4b",
-        "firstName": "Jackson",
-        "lastName": "Mwangi"
-      },
+      "userId": "64df3c064180b81adfe41d4b",
       "description": "Watch the below video. Its just facinating.",
       "likes": [
         "497f1341-8b32-46cb-a335-470bdab3a365"
@@ -488,11 +398,7 @@
     },
     {
       "id": "dac7733a-4748-4b77-ac06-80693604daa8",
-      "userId": {
-        "id": "64df3c064180b81adfe41d4b",
-        "firstName": "Jackson",
-        "lastName": "Mwangi"
-      },
+      "userId": "64df3c064180b81adfe41d4b",
       "description": "Video of the week",
       "likes": [],
       "comments": [],
@@ -503,11 +409,7 @@
     },
     {
       "id": "fd685141-7060-4e11-a673-72e6954113ca",
-      "userId": {
-        "id": "64df3c064180b81adfe41d4b",
-        "firstName": "Jackson",
-        "lastName": "Mwangi"
-      },
+      "userId":"64df3c064180b81adfe41d4b",
       "description": "Kindly watch the below video and give it a like",
       "likes": [],
       "comments": [],
@@ -518,11 +420,7 @@
     },
     {
       "id": "9d26a985-55ee-4480-b05c-45192f9dee0d",
-      "userId": {
-        "id": "64df3c064180b81adfe41d4b",
-        "firstName": "Jackson",
-        "lastName": "Mwangi"
-      },
+      "userId": "64df3c064180b81adfe41d4b",
       "description": "Helloo There. What a comeback to this project. I really hope that all will be fine",
       "likes": [],
       "comments": [],
@@ -533,11 +431,7 @@
     },
     {
       "id": "df06e708-e726-4efb-9f85-439d5a4c8d33",
-      "userId": {
-        "id": "64df3c064180b81adfe41d4b",
-        "firstName": "Jackson",
-        "lastName": "Mwangi"
-      },
+      "userId": "64df3c064180b81adfe41d4b",
       "likes": [],
       "comments": [],
       "createdAt": "2024-02-20T12:49:15.579Z",
@@ -548,11 +442,7 @@
     },
     {
       "id": "8ef99928-e073-4324-b64e-e9be41264b57",
-      "userId": {
-        "id": "64df3c064180b81adfe41d4b",
-        "firstName": "Jackson",
-        "lastName": "Mwangi"
-      },
+      "userId": "64df3c064180b81adfe41d4b",
       "likes": [
         "64df3c064180b81adfe41d4b"
       ],
