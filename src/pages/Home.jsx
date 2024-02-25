@@ -42,10 +42,12 @@ const { posts,writePost } = usePostsRest();
   } = useForm();
 
   const handleFileUPload = async (file) => {
-    setPosting(true);
     let response;
     const  imageRef = ref(imageDb, `images/${v4()}`);
-    await uploadBytes(imageRef, file)
+    let filetype = Object.keys(file);
+    let fileToUpload = file[filetype];
+    console.log()
+    await uploadBytes(imageRef, fileToUpload)
       .then((resp)=>{
         console.log(resp);
         response =  resp;
@@ -56,6 +58,7 @@ const { posts,writePost } = usePostsRest();
 
 
   const handlePostSubmit = async (data) => {
+    setPosting(true);
     console.log(data);
     console.log(file.image)
     const resp = await handleFileUPload(file);
@@ -68,8 +71,10 @@ const { posts,writePost } = usePostsRest();
         const res = await writePost(postData);
         console.log(res);
         if (res.status === "success") {
+          setPosting(false)
           alert("Post Created!");
         } else {
+          setPosting(false)
           alert("An Unknown Error Occured");
         }
     })

@@ -32,7 +32,7 @@ function usePostRest(){
     const [imgUrl, setImgUrl] = useState(null);
     const user = useSelector((state)=> state.user.user);
 
-    const originalRecord = [...posts];
+    let originalRecord = [...posts];
 
     useEffect(()=>{
        async function getPosts(){
@@ -47,7 +47,7 @@ function usePostRest(){
             }
         }
         getPosts();
-    }, [originalRecord.length]);
+    }, [originalRecord.length, posts.length]);
 
     function writePost(post){
         console.log("POST IMAGE FROM WRITE POST", post.image);
@@ -96,10 +96,12 @@ function usePostRest(){
         let res = {};
 
         console.log(postId)
+        let newPosts = posts.filter(post => post.id === postId);
         try{
             const response = await axios.delete(`${baseUrl}/posts/${postId}`);
             console.log(response);
             if (response.status === 200){
+                originalRecord = newPosts;
                 setRequestStatus(REQUEST_STATUS.SUCCESS);
                 res = {status: REQUEST_STATUS.SUCCESS, message: "Post Deleted"};
             } else {
