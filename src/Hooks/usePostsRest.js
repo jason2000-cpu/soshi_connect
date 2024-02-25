@@ -97,9 +97,11 @@ function usePostRest(){
         let res = {};
 
         console.log(postId)
+        console.log("BEFORE::", posts.length)
         let newPosts = posts.filter(post => post.id !== postId);
-        originalRecord  = [...newPosts]
-        console.log(newPosts)
+        setPosts(newPosts);
+        console.log("AFTER",posts.length);
+        console.log(newPosts);
         try{
             const response = await axios.delete(`${baseUrl}/posts/${postId}`);
             console.log(response);
@@ -109,7 +111,7 @@ function usePostRest(){
                 res = {status: REQUEST_STATUS.SUCCESS, message: "Post Deleted"};
             } else {
                 setRequestStatus(REQUEST_STATUS.FAILURE);
-                originalRecord = [...posts]
+                setPosts(originalRecord);
                 res = {status: REQUEST_STATUS.SUCCESS, message: "Axios Error"};
             }
 
