@@ -47,6 +47,7 @@ function usePostRest(){
             }
         }
         getPosts();
+        console.log("POSTS REFRESHED!!!!!")
     }, [originalRecord.length, posts.length]);
 
     function writePost(post){
@@ -96,16 +97,19 @@ function usePostRest(){
         let res = {};
 
         console.log(postId)
-        let newPosts = posts.filter(post => post.id === postId);
+        let newPosts = posts.filter(post => post.id !== postId);
+        originalRecord  = [...newPosts]
+        console.log(newPosts)
         try{
             const response = await axios.delete(`${baseUrl}/posts/${postId}`);
             console.log(response);
             if (response.status === 200){
-                originalRecord = newPosts;
+                // originalRecord = [...newPosts];
                 setRequestStatus(REQUEST_STATUS.SUCCESS);
                 res = {status: REQUEST_STATUS.SUCCESS, message: "Post Deleted"};
             } else {
                 setRequestStatus(REQUEST_STATUS.FAILURE);
+                originalRecord = [...posts]
                 res = {status: REQUEST_STATUS.SUCCESS, message: "Axios Error"};
             }
 
