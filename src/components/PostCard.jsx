@@ -178,6 +178,17 @@ const PostCard = ({ post, user }) => {
     }
   };
 
+  const handlePostDelete = async (postId) =>{
+    setLoading(true)
+    let res = await deletePost(postId);
+    if (res.status === "SUCCESS"){
+      setLoading(false);
+      alert(`${res.message}`)
+    } else {
+      setLoading(false);
+      alert(`${res.message}`)
+    }
+  }
   return (
     <div className='mb-2 bg-primary p-4 rounded-xl'>
       <div className='flex gap-3 items-center mb-2'>
@@ -276,7 +287,7 @@ const PostCard = ({ post, user }) => {
         {user?.id === post?.userId && (
           <div
             className='flex gap-1 items-center text-base text-ascent-1 cursor-pointer'
-            onClick={() => deletePost(post?.id)}
+            onClick={()=>handlePostDelete(post?.id)}
           >
             <MdOutlineDeleteOutline size={20} />
             <span>Delete</span>

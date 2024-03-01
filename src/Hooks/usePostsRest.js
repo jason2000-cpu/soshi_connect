@@ -120,6 +120,8 @@ function usePostRest(){
             setRequestStatus(REQUEST_STATUS.FAILURE);
             res = {status: REQUEST_STATUS.FAILURE, message: err};
         }
+
+        return res;
     }
 
 
