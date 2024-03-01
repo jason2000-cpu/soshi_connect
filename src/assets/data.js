@@ -314,76 +314,53 @@ export const posts = [
   },
 ];
 
-export const postComments = [
+export const PostComments = [
   {
-    _id: "64df43e04a4c0d47b536a02a",
-    userId: {
-      _id: "64df424b4a4c0d47b5369f65",
-      firstName: "User",
-      lastName: "One",
-    },
-    postId: "64df3ef86c2bd953c7b43193",
-    comment: "hahahah",
+    id: "",
+    userId: "64df3c064180b81adfe41d4b",
+    postId: "8997190a-783f-428a-8b9c-e8b0ffcc1a78",
+    comment: "hahaha",
     from: "User One",
-    likes: ["64df39704180b81adfe41d0b"],
     replies: [],
+    likes: [],
     createdAt: "2023-08-18T10:11:44.091Z",
     updatedAt: "2023-08-21T03:37:03.927Z",
-    __v: 0,
+    _v: 0
   },
   {
-    _id: "64df41b14a4c0d47b5369f4d",
-    userId: {
-      _id: "64df39704180b81adfe41d0b",
-      firstName: "MTech",
-      lastName: "Solutions",
-      profileUrl:
-        "https://res.cloudinary.com/djs3wu5bg/image/upload/v1692299991/SOCIALMEDIA/fvws1unsqytcqketv78w.png",
-      location: "Mumbai, India",
-    },
-    postId: "64df3ef86c2bd953c7b43193",
-    comment: "i would like to have them in my house",
+    id: "1",
+    userId: "64df3c064180b81adfe41d4b",
+    postId: "8997190a-783f-428a-8b9c-e8b0ffcc1a78",
+    comment: "I would like to have them in my house",
     from: "MTech Solutions",
-    likes: ["64df39704180b81adfe41d0b"],
     replies: [],
-    createdAt: "2023-08-18T10:02:25.492Z",
-    updatedAt: "2023-08-21T03:27:57.602Z",
-    __v: 0,
+    likes: [],
+    createdAt: "2023-08-18T10:11:44.091Z",
+    updatedAt: "2023-08-21T03:37:03.927Z",
+    _v: 0
   },
   {
-    _id: "64df41304a4c0d47b5369f0d",
-    userId: {
-      _id: "64df3aec4180b81adfe41d32",
-      firstName: "Akwasi",
-      lastName: "Asante",
-      profileUrl:
-        "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874470/cld-sample.jpg",
-    },
-    postId: "64df3ef86c2bd953c7b43193",
-    comment: "This dogs are too serious!",
-    from: "Akwasi Asante",
-    likes: ["64df39704180b81adfe41d0b"],
-    replies: [
-      {
-        userId: {
-          _id: "64df39704180b81adfe41d0b",
-          firstName: "MTech",
-          lastName: "Solutions",
-          profileUrl:
-            "https://res.cloudinary.com/djs3wu5bg/image/upload/v1692299991/SOCIALMEDIA/fvws1unsqytcqketv78w.png",
-          location: "Mumbai, India",
-        },
-        from: "MTech Solutions",
-        replyAt: "Akwasi Asante",
-        comment: "Not easy, hahahah",
-        created_At: "2023-08-18T10:01:08.771Z",
-        updated_At: "2023-08-18T09:56:38.344Z",
-        likes: [],
-        _id: "64df41644a4c0d47b5369f24",
-      },
-    ],
-    createdAt: "2023-08-18T10:00:16.352Z",
-    updatedAt: "2023-08-18T10:01:14.090Z",
-    __v: 1,
+    id: "2",
+    userId: "64df3c064180b81adfe41d4b",
+    postId: "8997190a-783f-428a-8b9c-e8b0ffcc1a78",
+    comment: "You must be kidding me",
+    from: "Junior",
+    replies: [],
+    likes: [],
+    createdAt: "2023-08-18T10:11:44.091Z",
+    updatedAt: "2023-08-21T03:37:03.927Z",
+    _v: 0
   },
-];
+  {
+    id: "3",
+    userId: "64df3c064180b81adfe41d4b",
+    postId: "8997190a-783f-428a-8b9c-e8b0ffcc1a78",
+    comment: "hahaha",
+    from: "User One",
+    replies: [],
+    likes: [],
+    createdAt: "2023-08-18T10:11:44.091Z",
+    updatedAt: "2023-08-21T03:37:03.927Z",
+    _v: 0
+  }
+]

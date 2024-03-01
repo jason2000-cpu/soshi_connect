@@ -42,16 +42,13 @@ function usePostRest(){
                 setPosts(response.data);
 
             } catch(err) {
-                console.log(err, "Error while fetching posts")
                 setRequestStatus(REQUEST_STATUS.FAILURE);
             }
         }
         getPosts();
-        console.log("POSTS REFRESHED!!!!!")
     }, [originalRecord.length, posts.length]);
 
     function writePost(post){
-        console.log("POST IMAGE FROM WRITE POST", post.image);
         const newPost = {
             id: generatePostID(),
             userId: {
@@ -76,11 +73,9 @@ function usePostRest(){
             try{
                 const response = await  axios.post(`${baseUrl}/posts`, newPost);
                 setRequestStatus(REQUEST_STATUS.SUCCESS);
-                console.log(response, "Post Success")
                 res = {status: REQUEST_STATUS.SUCCESS, message: "Post Success"};
 
             } catch(err) {
-                console.log(err, "Error while posting")
                 setRequestStatus(REQUEST_STATUS.FAILURE);
                 setPosts(originalRecord);
                 res = {status: REQUEST_STATUS.FAILURE, message: err};
@@ -96,15 +91,10 @@ function usePostRest(){
    async function deletePost(postId){
         let res = {};
 
-        console.log(postId)
-        console.log("BEFORE::", posts.length)
         let newPosts = posts.filter(post => post.id !== postId);
         setPosts(newPosts);
-        console.log("AFTER",posts.length);
-        console.log(newPosts);
         try{
             const response = await axios.delete(`${baseUrl}/posts/${postId}`);
-            console.log(response);
             if (response.status === 200){
                 // originalRecord = [...newPosts];
                 setRequestStatus(REQUEST_STATUS.SUCCESS);
@@ -116,7 +106,6 @@ function usePostRest(){
             }
 
         } catch (err) {
-            console.log(err, "Error while deleting post")
             setRequestStatus(REQUEST_STATUS.FAILURE);
             res = {status: REQUEST_STATUS.FAILURE, message: err};
         }
@@ -135,7 +124,6 @@ function usePostRest(){
               post.likes.push(user.id);
        }
 
-        console.log(post, "Liked Post")
         try {
             const response = await axios.patch(`${baseUrl}/posts/${postId}`, post);
             setRequestStatus(REQUEST_STATUS.SUCCESS);
@@ -143,7 +131,6 @@ function usePostRest(){
             res = {status: REQUEST_STATUS.SUCCESS, message: "Like Success"}
 
         } catch(err) {
-            console.log(err, "Error while liking post")
             setRequestStatus(REQUEST_STATUS.FAILURE);
             setPosts(originalRecord);
             res = {status: REQUEST_STATUS.FAILURE, message:"Could Not Like Post"}

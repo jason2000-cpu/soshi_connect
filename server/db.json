@@ -166,7 +166,9 @@
       "id": "f1c40404-e1d5-45fe-ba67-3da386c328d8",
       "userId": "497f1341-8b32-46cb-a335-470bdab3a365",
       "description": "Hello Friends today I want to upload an image to firebase. So the image to this post is uploaded on firebase. Pray for me that it works fine",
-      "likes": [],
+      "likes": [
+        "64df3c064180b81adfe41d4b"
+      ],
       "comments": [],
       "createdAt": "2023-11-24T11:41:03.955Z",
       "updatedAt": null,
@@ -324,7 +326,56 @@
       "description": "Video of the Week!"
     }
   ],
-  "postComments": [],
+  "postComments": [
+    {
+      "id": "",
+      "userId": "64df3c064180b81adfe41d4b",
+      "postId": "8997190a-783f-428a-8b9c-e8b0ffcc1a78",
+      "comment": "hahaha",
+      "from": "User One",
+      "replies": [],
+      "likes": [],
+      "createdAt": "2023-08-18T10:11:44.091Z",
+      "updatedAt": "2023-08-21T03:37:03.927Z",
+      "_v": 0
+    },
+    {
+      "id": "1",
+      "userId": "64df3c064180b81adfe41d4b",
+      "postId": "8997190a-783f-428a-8b9c-e8b0ffcc1a78",
+      "comment": "I would like to have them in my house",
+      "from": "MTech Solutions",
+      "replies": [],
+      "likes": [],
+      "createdAt": "2023-08-18T10:11:44.091Z",
+      "updatedAt": "2023-08-21T03:37:03.927Z",
+      "_v": 0
+    },
+    {
+      "id": "2",
+      "userId": "64df3c064180b81adfe41d4b",
+      "postId": "8997190a-783f-428a-8b9c-e8b0ffcc1a78",
+      "comment": "You must be kidding me",
+      "from": "Junior",
+      "replies": [],
+      "likes": [],
+      "createdAt": "2023-08-18T10:11:44.091Z",
+      "updatedAt": "2023-08-21T03:37:03.927Z",
+      "_v": 0
+    },
+    {
+      "id": "3",
+      "userId": "64df3c064180b81adfe41d4b",
+      "postId": "8997190a-783f-428a-8b9c-e8b0ffcc1a78",
+      "comment": "hahaha",
+      "from": "User One",
+      "replies": [],
+      "likes": [],
+      "createdAt": "2023-08-18T10:11:44.091Z",
+      "updatedAt": "2023-08-21T03:37:03.927Z",
+      "_v": 0
+    }
+  ],
   "requests": [
     {
       "id": "64df3aec4180b81adfe41d32",

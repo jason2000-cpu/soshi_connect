@@ -25,7 +25,7 @@ const getTime = () => {
 }
 
 
-async function usePostCommentsRest(){
+async function usePostCommentsRest(){ 
     const [comments, setComments] = useState([]);
 
     const user = useSelector((state)=> state.user.user);
@@ -38,6 +38,8 @@ async function usePostCommentsRest(){
                 let response = await axios.get(`${baseUrl}/postComments`)
                 // .then(response => response.json())
                 // .then(data=> setComments(data));
+                setComments(response.data);
+                console.log("COMMENTS REST:::::", comments)
                 return response.data
             } catch(err) {
                 console.log("An Error Occured while fetching comments", err);
@@ -46,12 +48,6 @@ async function usePostCommentsRest(){
 
         getComments();
     }, [originalComments.length])
-
-    async function getPostComments(postId){
-        let postComments = comments.filter((comment)=> comment.postId === postId);
-        console.log(postComments);
-        return postComments;
-    }
 
     async function postComment(comment, postId){
 
@@ -108,6 +104,12 @@ async function usePostCommentsRest(){
         }
 
         return res;
+    }
+
+    async function getPostComments(postId){
+        let postComments = comments.filter((comment)=> comment.postId === postId);
+        console.log(postComments);
+        return postComments;
     }
 
     return {

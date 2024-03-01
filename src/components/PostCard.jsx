@@ -10,10 +10,10 @@ import { useForm } from "react-hook-form";
 import TextInput from "./TextInput";
 import Loading from "./Loading";
 import CustomButton from "./CustomButton";
-import { postComments } from "../assets/data";
+import { PostComments } from "../assets/data";
 import useRequestRest from "../Hooks/useRequestRest";
 import usePostsRest from "../Hooks/usePostsRest";
-import usePostCommentsRest from "../Hooks/usePostCommentsRest";
+import usePostCommentsRest from "../Hooks/usePostCommentsRest"
 
 
 
@@ -129,15 +129,15 @@ const CommentForm = ({ user, id, replyAt, getComments }) => {
 const PostCard = ({ post, user }) => {
   const [showAll, setShowAll] = useState(0);
   const [showReply, setShowReply] = useState(0);
-  const [comments, setComments] = useState([]);
+  const [postComments, setPostComments] = useState([]);
   const [loading, setLoading] = useState(false);
   const [replyComments, setReplyComments] = useState(0);
   const [showComments, setShowComments] = useState(0);
   const [like, setLike] = useState(post?.likes?.includes(user?.id));
 
   const { data } = useRequestRest();
-  const { deletePost, likePost } = usePostsRest();
-  const { getPostComments, likeComment, writeComment} = usePostCommentsRest();
+  const {deletePost, likePost } = usePostsRest();
+  // const {comments, postComment, getPostComments,likeComment} = usePostCommentsRest();
 
 
   const getUser = (post) => {
@@ -148,11 +148,15 @@ const PostCard = ({ post, user }) => {
 
   const postUser = getUser(post);
 
+  // console.log("ALL COMMENTS::::", postComments);
 
   const getComments = async (postId) => {
+    // setPostComments(PostComments);
     setReplyComments(0);
-    setComments(getPostComments(postId));
+    let commentsFileterd = PostComments.filter((comment => comment.postId === postId));
+    setPostComments(commentsFileterd);
     setLoading(false);
+    console.log(PostComments)
   };
 
   const handleLike = async (postId) => {
@@ -167,8 +171,6 @@ const PostCard = ({ post, user }) => {
       setLike(true);
     }
 
-    console.log("From handleLike", post.likes);
-    console.log(like);
     setLike(!like);
     let response = await likePost(postId);
 
@@ -281,7 +283,7 @@ const PostCard = ({ post, user }) => {
           }}
         >
           <BiComment size={20} />
-          {post?.comments?.length} Comments
+          {PostComments.length} Comments
         </p>
 
         {user?.id === post?.userId && (
@@ -306,8 +308,8 @@ const PostCard = ({ post, user }) => {
 
           {loading ? (
             <Loading />
-          ) : comments?.length > 0 ? (
-            comments?.map((comment) => (
+          ) : PostComments?.length > 0 ? (
+            PostComments?.map((comment) => (
               <div className='w-full py-2' key={comment?.id}>
                 <div className='flex gap-3 items-center mb-1'>
                   <Link to={"/profile/" + comment?.userId?.id}>
