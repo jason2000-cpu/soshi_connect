@@ -7,8 +7,8 @@ import { v4 as uuidv4 } from "uuid";
 
 
 
-// const baseUrl = "https://outstanding-outfit-hen.cyclic.app/";
-const baseUrl = "http://localhost:3001"
+const baseUrl = "https://jade-cautious-duck.cyclic.app/";
+// const baseUrl = "http://localhost:3001"
 export const REQUEST_STATUS = {
     LOADING: "loading",
     SUCCESS: "success",
